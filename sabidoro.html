@@ -1,0 +1,120 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABIADORO et Stucco Seta</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style22.css">
+</head>
+<body>
+    <header>
+        <h1>SABIADORO </h1>
+        <nav class="navbar">
+            <a href="acceuil.html" class="nav-link">Accueil</a>
+        </nav>
+    </header>
+    <section>
+        <fieldset>
+            <legend><h3>Description :</h3></legend>
+            <p>
+                Idéale pour les designs d’intérieur, elle offre une finition agréable caractérisée par un éclat métallique précieux ainsi que de microparticules de sable qui permettent d’obtenir des mouvements originaux du clair-obscur. 
+                SABBIADORO garantit une grande flexibilité lors de l’application. Cette peinture allie élegance dans les environnements classiques, néoclassiques et modernité dans les environnements actuels tels que les lieux publics, maisons privatives…etc.
+            </p>
+            <br><br>
+            <center><img class="a" src="img/sabiadoro.jpg" class="center" width="500px" alt="SABIADORO"></center>
+            <main>
+                <p><strong>Prix :</strong><br>
+                    - SABBIADORO NEUTRO: 1 Kg / 43dt <span>(remise 5%)</span><br>
+                    - SABBIADORO REFLET/METALIQUE: 1kg / 59.5dt <span>(remise 5%)</span>
+                </p>
+                <p>
+                    La semaine prochaine, la remise augmentera de 15 %.<br>
+                    (Livraison gratuite) contactez-nous à notre page : <br>
+                    <a href="https://www.facebook.com/SridiThaher">page facebook</a>
+                </p>
+                <p><strong>Catalogue :</strong></p>
+                <table class="catalog-table" style="display: block;">
+                    <tr>
+                        <td><img src="img/S1.jpg" alt="Échantillon 1" class="catalog-img" data-index="0"></td>
+                        <td><img src="img/S2.jpg" alt="Échantillon 2" class="catalog-img" data-index="1"></td>
+                        <td><img src="img/S3.jpg" alt="Échantillon 3" class="catalog-img" data-index="2"></td>
+                        <td><img src="img/S4.jpg" alt="Échantillon 4" class="catalog-img" data-index="3"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/S5.jpg" alt="Échantillon 5" class="catalog-img" data-index="4"></td>
+                        <td><img src="img/S6.jpg" alt="Échantillon 6" class="catalog-img" data-index="5"></td>
+                        <td><img src="img/S7.jpg" alt="Échantillon 7" class="catalog-img" data-index="6"></td>
+                        <td><img src="img/S8.jpg" alt="Échantillon 8" class="catalog-img" data-index="7"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/S9.jpg" alt="Échantillon 9" class="catalog-img" data-index="8"></td>
+                        <td><img src="img/S10.jpg" alt="Échantillon 10" class="catalog-img" data-index="9"></td>
+                        <td><img src="img/S11.jpg" alt="Échantillon 11" class="catalog-img" data-index="10"></td>
+                        <td><img src="img/S12.jpg" alt="Échantillon 12" class="catalog-img" data-index="11"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/s13.jpg" alt="Échantillon 13" class="catalog-img" data-index="12"></td>
+                        <td><img src="img/s14.jpg" alt="Échantillon 14" class="catalog-img" data-index="13"></td>
+                        <td><img src="img/s15.jpg" alt="Échantillon 15" class="catalog-img" data-index="14"></td>
+                        <td><img src="img/s16.jpg" alt="Échantillon 16" class="catalog-img" data-index="15"></td>
+                    </tr>
+                </table>
+            </main>
+        </fieldset>
+    </section>
+    <footer>
+        <address>
+            Rue Kairawen en face café Bouneb, 4070 Msaken, Tunisia <br>
+            Email: stepeinturesridi@gmail.com <br>
+            Tel: 52 282 624
+        </address>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <script>
+        // JavaScript code
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const images = document.querySelectorAll(".catalog-img");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        let currentIndex;
+
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+                currentIndex = index;
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            lightboxImg.src = images[currentIndex].src;
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            lightboxImg.src = images[currentIndex].src;
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

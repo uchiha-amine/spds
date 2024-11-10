@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>metalizato</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style22.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <header>
+    <h1>metalizato</h1>
+    <nav class="navbar">
+      <a href="acceuil.html" class="nav-link" >Accueil</a>
+  </nav>
+</header>
+    
+    <fieldset>
+        <legend><h3>Description :</h3></legend>
+        <p>
+            METALLIZZATO permet d’obtenir des effets exceptionnels qui ne peuvent être reproduits d’une manière artisanale. Il offre une finition nacrée changeante. C’est une peinture décorative parfaitement lavable, non toxique qui ne jaunit pas et légèrement parfumée METALLIZZATO offre des reflets métalliques argentés qui réfléchissent la lumière.</p> <br><br>
+         <center><img class="a"  src="img/metallizzato.jpg" class="center" width="500px"></center>
+         <main><p><strong>Prix:</strong> <br>-METALIZATTO NEUTRO: 1 Kg/32dt <span>(remise 5%)</span> <br>-METALIZATTO REFLET: 1kg/84dt <span>(remise 5%)</span><br>-METALIZATTO METALIQUE: 1kg/36dt <span>(remise 5%)</span></p>
+         <p>La semaine prochaine, la remise augmentera de 25 %.<br>
+         (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+         <p><strong> Catalogue :</strong>
+         </p>
+     
+         <table class="catalog-table" style="display: block;">
+         <tr>
+           <td><img src="img/me1.jpg" class="catalog-img" data-index="0"></td>
+           <td><img src="img/me2.jpg" class="catalog-img" data-index="1"></td>
+           <td><img src="img/me3.jpg" class="catalog-img" data-index="2"></td>
+           <td><img src="img/me4.jpg" class="catalog-img" data-index="3"></td>
+          
+         <tr>
+           <td><img src="img/me5.jpg" class="catalog-img" data-index="4"></td>
+           <td><img src="img/me6.jpg" class="catalog-img" data-index="5"></td>
+           <td><img src="img/me7.jpg" class="catalog-img" data-index="6"></td>
+           <td><img src="img/me8.jpg" class="catalog-img" data-index="7"></td>
+          
+         </tr>
+         <tr>
+           <td><img src="img/me9.jpg" class="catalog-img" data-index="8"></td>
+           <td><img src="img/me10.jpg" class="catalog-img" data-index="9"></td>
+           <td><img src="img/me11.jpg" class="catalog-img" data-index="10"></td>
+           <td><img src="img/me12.jpg" class="catalog-img" data-index="11"></td>
+           
+         </tr>
+     
+     
+       </table><br>
+     </main>
+     
+     
+     </fieldset>
+     <br><footer><br><br><br>
+     <address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+     Email for booking :stepeinturesridi@gmail.com <br>
+     Tel: 52 282 624</address>
+     </footer>
+     <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+  </div>
+<script>
+// JavaScript code
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".catalog-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentIndex;
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      currentIndex = index;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+      lightbox.style.display = "none";
+  }
+});
+
+</script>
+</body>
+</html> 

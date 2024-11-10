@@ -1,0 +1,110 @@
+  <!DOCTYPE html><html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="img/logo.ico" type="image/x-icon">
+      <title>Stucco Seta</title>
+      <link rel="icon" href="img/logo.ico" type="image/x-icon">
+      <link rel="stylesheet" href="style22.css">
+  </head>
+  <body>
+    
+      <header>
+          <h1>Stucco Seta</h1>
+          <nav class="navbar">
+            <a href="acceuil.html" class="nav-link" >Accueil</a>
+        </nav>
+      </header>
+  <section>  
+      <fieldset>
+        <legend><h3>Description :</h3></legend>
+        <p>
+        Ce revêtement mural décoratif est non toxique. Il est perméable à la vapeur d’eau,
+          ne jaunit pas et il est très résistant par rapport aux champignons et bactéries.
+          Stucco Seta combine l’effet précieux et élégant du stucco vénitien ainsi qu’une douceur au toucher remarquable. 
+        Cette peinture réfléchi la lumière comme un ancien tissu mural.</p> <br><br>
+        <center><img class="a"  src="stucco.jpg" class="center"></center>
+        <main><p><strong>Prix:</strong> <br>-Stucco Seta 1 Kg/77dt <span>(remise 5%)</span> <br>-Stucco Seta REFLET/METALIQUE: 1kg/84dt <span>(remise 5%)</span><br>-Stucco Veneziano Bianco:1kg/24,8dt <span>(remise 5%)</span></p>
+        <p>La semaine prochaine, la remise augmentera de 25 %.<br>
+        (Livraison gratuit) contactez-nous à notre page : <br> <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+        <p><strong>Catalogue</strong> :
+        </p>
+    
+              
+              <table class="catalog-table" style="display: block;">
+                  <tr>
+                      <td><img src="img/A-2553-1.jpg" alt="Color Sample 1" class="catalog-img" data-index="0"></td>
+                      <td><img src="img/a.jpg" alt="Color Sample 2" class="catalog-img" data-index="1"></td>
+                      <td><img src="img/B-2551-1.jpg" alt="Color Sample 3" class="catalog-img" data-index="2"></td>
+                      <td><img src="img/A-2570-1.jpg" alt="Color Sample 4" class="catalog-img" data-index="3"></td>
+                  </tr>
+                  <tr>
+                      <td><img src="img/C-2551-1.jpg" alt="Color Sample 5" class="catalog-img" data-index="4"></td>
+                      <td><img src="img/C-2552-1.jpg" alt="Color Sample 6" class="catalog-img" data-index="5"></td>
+                      <td><img src="img/D-2551-1.jpg" alt="Color Sample 7" class="catalog-img" data-index="6"></td>
+                      <td><img src="img/A-2571-1.jpg" alt="Color Sample 8" class="catalog-img" data-index="7"></td>
+                  </tr>
+                  <tr>
+                      <td><img src="img/D-2552-1.jpg" alt="Color Sample 9" class="catalog-img" data-index="8"></td>
+                      <td><img src="img/A-2552-1.jpg" alt="Color Sample 10" class="catalog-img" data-index="9"></td>
+                      <td><img src="img/A-2554-1.jpg" alt="Color Sample 11" class="catalog-img" data-index="10"></td>
+                      <td><img src="img/A-2577-1.jpg" alt="Color Sample 12" class="catalog-img" data-index="11"></td>
+                  </tr>
+              </table>
+          </main>
+      </fieldset>
+    </section>  
+      <footer>
+          <address>Rue Kairawen en face café Bouneb, 4070 Msaken, Tunisia <br>
+          Email: stepeinturesridi@gmail.com <br>Tel: 52 282 624</address>
+      </footer>
+
+
+      <div id="lightbox" class="lightbox">
+          <span class="close">&times;</span>
+          <img class="lightbox-content" id="lightbox-img">
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
+      </div>
+  <script>
+  // JavaScript code
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const images = document.querySelectorAll(".catalog-img");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let currentIndex;
+
+  images.forEach((img, index) => {
+      img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+          currentIndex = index;
+      });
+  });
+
+  closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+  });
+
+  prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+      lightboxImg.src = images[currentIndex].src;
+  });
+
+  nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+      lightboxImg.src = images[currentIndex].src;
+  });
+
+  lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+          lightbox.style.display = "none";
+      }
+  });
+
+  </script>
+  </body>
+  </html> 

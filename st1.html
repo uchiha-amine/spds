@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>STUCCO 1000</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet'  href='style21.css'>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+
+
+</head>
+<body>
+    <header><h1>STUCCO 1000</h1><nav class="navbar">
+      <a href="acceuil.html" class="nav-link" >Accueil</a>
+  </nav>
+</header></header>
+    <fieldset>
+   <legend><h3>Description :</h3></legend>
+   <p>Sont des revêtements d’intérieur présentant une excellente résistance, une bonne stabilité chromatique et une capacité à transpirer, tant d’éléments qui en font des produits particulièrement adaptés pour habiller et décorer des surfaces importantes sur le plan artistique et historique.
+  </p> <p id="p1">Catalogue :
+</p> <center><img src="img/k1.jpg" id="cd"></center>
+   
+<p>Prix: <br>-STUCCO 100: 1 Kg/25dt <span>(remise 5%)</span> </p>
+    <p>La semaine prochaine, la remise augmentera de 25 %.<br>
+    (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+    <main> 
+   
+</main>
+
+
+</fieldset>
+<br><footer><br><br><br>
+<address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+Email for booking :stepeinturesridi@gmail.com <br>
+Tel: 52 282 624</address>
+</footer>   
+<div id="lightbox" class="lightbox">
+<span class="close">&times;</span>
+<img class="lightbox-content" id="lightbox-img">
+<a class="prev">&#10094;</a>
+<a class="next">&#10095;</a>
+</div>
+<script>
+// JavaScript code
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".catalog-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentIndex;
+
+images.forEach((img, index) => {
+img.addEventListener("click", () => {
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
+currentIndex = index;
+});
+});
+
+closeBtn.addEventListener("click", () => {
+lightbox.style.display = "none";
+});
+
+prevBtn.addEventListener("click", () => {
+currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+lightboxImg.src = images[currentIndex].src;
+});
+
+lightbox.addEventListener("click", (e) => {
+if (e.target === lightbox) {
+lightbox.style.display = "none";
+}
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>vesucio</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style22.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <header>
+    <h1>vesucio</h1>
+    <nav class="navbar">
+      <a href="acceuil.html" class="nav-link" >Accueil</a>
+  </nav>
+</header>
+    
+    <legend><h3>Description :</h3></legend>
+    <fieldset>
+    <p>
+        Offre une  finition de haute qualité à la décoration intérieure ainsi qu’un effet FLASH PEARL. Il permet d’obtenir, avec une application très simple, un résultat phénoménal “flamboyant” d’une beauté époustouflante. VESUVIO est lavable après environ trois semaines à partir de la date de l’application, non inflammable et offre une bonne perméabilité à la vapeur d’eau.</p> <br><br>
+        <center><img class="a"  src="img/ves.jpg" class="center" width="500px"></center>
+     <main><p><strong>Prix:</strong> <br>-VESUVIO: 1 Kg/83dt <span>(remise 5%)</span> </p>
+     <p>La semaine prochaine, la remise augmentera de 25 %.<br>
+     (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+     <p><strong>Catalogue :</strong>
+     </p>
+ 
+     <table class="catalog-table" style="display: block;">
+     <tr>
+       <td><img src="img/v1.jpg" class="catalog-img" data-index="0"></td>
+       <td><img src="img/v2.jpg" class="catalog-img" data-index="1"></td>
+       <td><img src="img/v3.jpg" class="catalog-img" data-index="2"></td>
+       <td><img src="img/v4.jpg" class="catalog-img" data-index="3"></td>
+      
+     <tr>
+       <td><img src="img/v5.jpg" class="catalog-img" data-index="4"></td>
+       <td><img src="img/v6.jpg" class="catalog-img" data-index="5"></td>
+       <td><img src="img/v7.jpg" class="catalog-img" data-index="6"></td>
+       <td><img src="img/v8.jpg" class="catalog-img" data-index="7"></td>
+      
+     </tr>
+     <tr>
+       <td><img src="img/v9.jpg" class="catalog-img" data-index="8"></td>
+       <td><img src="img/v10.jpg" class="catalog-img" data-index="9"></td>
+       <td><img src="img/v11.jpg" class="catalog-img" data-index="10"></td>
+       <td><img src="img/v12.jpg" class="catalog-img" data-index="0*11"></td>
+       
+     </tr>
+ 
+ 
+   </table><br>
+ </main>
+ 
+ 
+ </fieldset>
+ <br><footer><br><br><br>
+ <address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+ Email for booking :stepeinturesridi@gmail.com <br>
+ Tel: 52 282 624</address>
+ </footer>
+ <div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+<script>
+// JavaScript code
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".catalog-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentIndex;
+
+images.forEach((img, index) => {
+img.addEventListener("click", () => {
+  lightbox.style.display = "flex";
+  lightboxImg.src = img.src;
+  currentIndex = index;
+});
+});
+
+closeBtn.addEventListener("click", () => {
+lightbox.style.display = "none";
+});
+
+prevBtn.addEventListener("click", () => {
+currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+lightboxImg.src = images[currentIndex].src;
+});
+
+lightbox.addEventListener("click", (e) => {
+if (e.target === lightbox) {
+  lightbox.style.display = "none";
+}
+});
+
+</script>
+</body>
+</html> 

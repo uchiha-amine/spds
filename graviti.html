@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GRAFFIATO</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style22.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <header>
+      <h1>GRAFFIATO</h1>
+      <nav class="navbar">
+        <a href="acceuil.html" class="nav-link" >Accueil</a>
+    </nav>
+  </header>
+    <fieldset>
+        <legend><h3>Description :</h3></legend>
+        <p>
+            C’est un revêtement mural fabriqué à base de résines synthétiques pour extérieurs. Il est utilisé en général pour décorer et protéger les façades extérieures. Il peut être aussi utilisé pour les intérieurs. GRAFFIATO est la solution idéale pour protéger les façades des édifices des rayons UV, des intempéries. Il est recommandé de l’utiliser dans les endroits proches de la mer, dans les zones industrielles etc.</p> <br><br>
+         <center><img class="a"  src="img/graffiti.jpg" class="center" ></center>
+         <main><p><strong>Prix: </strong><br>-GRAFFIATO 1 Kg/(2,6dt/3,6dt) <span>(remise 5%)</span></p>
+         <p>La semaine prochaine, la remise augmentera de 15 %.<br>
+         (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+         <p><strong>Catalogue</strong> : :
+         </p>
+     
+         <table class="catalog-table" style="display: block;">
+         <tr>
+           <td><img src="img/G406.jpg" alt="Color Sample 1" class="catalog-img" data-index="0"></td>
+           <td><img src="img/G411.jpg" alt="Color Sample 1" class="catalog-img" data-index="1"></td>
+           <td><img src="img/G414.jpg" alt="Color Sample 1" class="catalog-img" data-index="2"></td>
+          
+          
+         <tr>
+           <td><img src="img/G415.jpg" alt="Color Sample 1" class="catalog-img" data-index="3"></td>
+           <td><img src="img/G420.jpg" alt="Color Sample 1" class="catalog-img" data-index="4"></td>
+           <td><img src="img/G435.jpg" alt="Color Sample 1" class="catalog-img" data-index="5"></td>
+
+          
+         </tr>
+         <tr>
+           <td><img src="img/G446.jpg" alt="Color Sample 1" class="catalog-img" data-index="6"></td>
+           <td><img src="img/G454.jpg" alt="Color Sample 1" class="catalog-img" data-index="7"></td>
+           <td><img src="img/G456.jpg" alt="Color Sample 1" class="catalog-img" data-index="8"></td>
+         
+           
+         </tr>
+         
+       </table><br>
+     </main>
+     
+     
+     </fieldset>
+     <br><footer><br><br><br>
+     <address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+     Email for booking :stepeinturesridi@gmail.com <br>
+     Tel: 52 282 624</address>
+     </footer>
+     <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+  </div>
+     <script>
+      // JavaScript code
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const images = document.querySelectorAll(".catalog-img");
+      const closeBtn = document.querySelector(".close");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+    
+      let currentIndex;
+    
+      images.forEach((img, index) => {
+          img.addEventListener("click", () => {
+              lightbox.style.display = "flex";
+              lightboxImg.src = img.src;
+              currentIndex = index;
+          });
+      });
+    
+      closeBtn.addEventListener("click", () => {
+          lightbox.style.display = "none";
+      });
+    
+      prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+          lightboxImg.src = images[currentIndex].src;
+      });
+    
+      nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+          lightboxImg.src = images[currentIndex].src;
+      });
+    
+      lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) {
+              lightbox.style.display = "none";
+          }
+      });
+    
+      </script>
+      </body>
+      </html> 

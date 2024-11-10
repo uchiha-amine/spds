@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Header */
+header {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    animation: slideInTop 1s ease-out;
+}
+
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-left: 30px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* Header Links */
+header a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eee;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header a:hover {
+    background-color: #333;
+    color: #eee;
+    transition: all 0.8s;
+}
+
+/* Animations */
+@keyframes slideInTop {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Content Links */
+p a {
+    font-weight: bold;
+    color: #5c4a8e;
+    text-decoration: none;
+}
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+main p {
+    font-size: 1.2em;
+    color: #444;
+    margin: 20px 0;
+}
+
+main p span {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Centered Image */
+img.center {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 7px;
+    width: 180px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table img {
+    max-width: 130px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+table img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Catalog Styling */
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 100%;
+}
+
+.catalog-item {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catalog-item img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.catalog-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer address {
+    font-style: normal;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Fieldset Styling */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px; /* Reduced padding for mobile */
+    margin: 20px auto;
+/* Prevent overflow */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-in-out;
+    width: 50%; /* Use a percentage to make it responsive */
+}
+
+legend h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+legend h3::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #d9534f;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+legend h3:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.lightbox {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.lightbox {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+
+
+/* Add styles for close, previous, and next buttons if needed */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    padding: 16px;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.lightbox-content {
+    max-width: 90%; /* Limit the image width */
+    max-height: 90%; /* Limit the image height */
+}
+header, footer {
+    width: 100%; /* Ensures full width */
+    margin: 0; /* Removes default margin */
+    padding: 10px 0; /* Adds some vertical padding */
+ /* Example background color */
+}
+
+
+@media (max-width: 768px) {
+    header, footer {
+        width: 100%; 
+        padding: 15px 0; 
+    }
+    .a{
+        width: 80%;
+    }
+    header h1 { font-size: 2em; }
+    header a { font-size: 1em; padding: 10px; }
+    .catalog-container { flex-direction: column; width: 20%;}
+    .catalog-item { width: 30%; max-width: 20px; }
+    main p{font-size: 12px;}
+    p { font-size: 15px; }
+    footer { font-size: 0.9em; }
+    fieldset {
+        padding: 5px;
+        margin: 5px auto; 
+        width: 80%; 
+    }
+    table {
+    width: 100%;
+    display: block; 
+    overflow-x: auto; 
+    white-space: nowrap;
+    }
+    fieldset {
+    padding: 10px;
+    margin: 10px auto; 
+    width: 89%; 
+    }
+    }
+
+@media (max-width: 500px) {
+    header, footer {
+        width: 100%; 
+        padding: 15px 0; 
+    }
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 20px;
+    }
+    legend{
+        font-size: 13px;
+    }
+    td img{
+        width: 70px;
+    }
+    .center img{
+        width: 100%;
+        display: block;
+
+    }
+    
+    header h1 { font-size: 1.5em; }
+    header a { font-size: 0.9em; padding: 8px; }
+    .catalog-container { flex-direction: column;width: 30%;}
+    main p { font-size: 13px; }
+
+    footer { font-size: 0.8em; }
+
+    fieldset {
+        
+        padding: 5px; /* Adjust padding for smaller screens */
+        margin: 5px auto; /* Centering */
+        width: 89%; /* Ensure it fits within smaller screens */
+}
+}
+@media (max-width: 330px) {
+    header, footer {
+        width: 100%; 
+        padding: 15px 0; 
+    }
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 20px;
+    }
+    legend{
+        font-size: 13px;
+    }
+    td img{
+        width: 50px;
+    }
+    .center img{
+        width: 100%;
+        display: block;
+
+    }
+    header h1 { font-size: 1.5em; }
+    header a { font-size: 0.9em; padding: 8px; }
+    .catalog-container { flex-direction: column;width: 30%;}
+    main p { font-size: 14px; }
+
+    footer { font-size: 0.8em; }
+
+    fieldset {
+        
+        padding: 5px; /* Adjust padding for smaller screens */
+        margin: 5px auto; /* Centering */
+        width: 89%; /* Ensure it fits within smaller screens */
+}
+}

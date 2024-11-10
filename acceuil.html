@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.P.D.S</title>
+    <link rel="stylesheet" href="style.css">
+    <style>@media (max-width: 385px) {
+
+        nav ul li a{
+            font-size: 13px;
+            color: #b89898;
+        }
+    
+    }</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <h1><img src="img/logo-removebg.png" alt="Logo">Ste Peinture & Décoration Sridi </h1>
+    <ul>
+        <li><a href="#decorationsInterieur">Décorations intérieur</a></li>
+        <li><a href="#decorationsExterieur2">Décorations extérieur</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+    <img class="carousel-image" src="img/img.jpg" alt="Abstract Colorful Background">
+    <img class="carousel-image hidden" src="img/img1.webp" alt="Modern Architecture">
+    <img class="carousel-image hidden" src="img/img2.jpg" alt="Minimalist Workspace">
+</div>
+
+<!-- Search Section -->
+ <div class="sticky-search">
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Rechercher des produits..." oninput="filterProducts()">
+    <button onclick="filterProducts()">Recherche</button>
+</div></div>
+
+<!-- Products Section -->
+<section id="products">
+    <!-- Décorations intérieur -->
+    <div id="decorationsInterieur" class="category">
+        <h2>Décorations intérieur</h2>
+        <center><h3 id="h3">- OLYMPIA -</h3></center>
+        <div id="interiorProducts1" class="product-grid"></div>
+        <button id="loadMoreInterior1" onclick="loadMoreProducts('interiorProducts1', 4)">Afficher plus</button>
+    </div>
+    <div id="decorationsInterieur2" class="category">
+        <center><h3 id="h3">- VALPANIT -</h3></center>
+        <div id="interiorProducts2" class="product-grid"></div>
+        <button id="loadMoreInterior2" onclick="loadMoreProducts('interiorProducts2', 4)">Afficher plus</button>
+    </div>
+
+    <!-- Décorations extérieur -->
+    <div id="decorationsExterieur" class="category">
+        
+        <center><h3 id="h3">- ASTRAL -</h3></center>
+        <div id="exteriorProducts1" class="product-grid"></div>
+        <button id="loadMoreExterior1" onclick="loadMoreProducts('exteriorProducts1', 4)">Afficher plus</button>
+    </div>
+    <div id="decorationsExterieur2" class="category">
+        <h2>Décorations extérieur</h2>
+        <center><h3 id="h3">- OLYMPIA -</h3></center>
+        <div id="exteriorProducts2" class="product-grid"></div>
+        <button id="loadMoreExterior2" onclick="loadMoreProducts('exteriorProducts2', 4)">Afficher plus</button>
+    </div>
+
+    
+
+    
+    
+
+    <p class="no-products" id="noProductsMessage">Aucun produit trouvé.</p>
+</section>
+
+<footer>
+    <p>© 2024 Ste Peinture & Décoration Sridi. Tous droits réservés.</p>
+</footer>
+<script>
+    let currentImageIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+
+function showNextImage() {
+    images[currentImageIndex].classList.add('hidden'); // Hide current image
+    currentImageIndex = (currentImageIndex + 1) % images.length; // Move to the next image
+    images[currentImageIndex].classList.remove('hidden'); // Show next image
+}
+
+// Automatically change images every 5 seconds
+setInterval(showNextImage, 5000); // Change interval (in milliseconds) as needed
+
+function filterProducts() {
+    // Your filtering logic here
+}
+
+function loadMoreProducts(categoryId, count) {
+    // Your loading logic here
+}
+// Define separate products for each category
+const products = {
+    interior1: [
+        { name: "STUCCO SETTA", image: "stucco.jpg", description: "Peinture intérieure de haute qualité (remise à partir de 25%).", page: "stuc.html" },
+        { name: "SABIADORO", image: "img/sabiadoro.jpg", description: "Peinture résistante aux intempéries.", page: "sabidoro.html" },
+        { name: "ANTECA ERA", image: "antrrrrr.png", description: "Peinture écologique et non toxique.", page: "anteca era.html" },
+        { name: "TRAVERTINO", image: "img/travertino.jpg", description: "Peinture satinée pour un fini lisse.", page: "travertino.html" },
+        { name: "MARMORINO", image: "img/marmorino.jpg", description: "Peinture brillante pour un effet éclatant.", page: "marmorino.html" },
+        { name: "METTALIZZATO", image: "img/metallizzato.jpg", description: "Peinture brillante pour un effet éclatant.", page: "metalizato.html" },
+        { name: "BAROCCO", image: "img/olymp.jpg", description: "Peinture brillante pour un effet éclatant.", page: "barrocco.html" },
+        { name: "NOUVECENTO", image: "img/nouvecento.jpg", description: "Peinture brillante pour un effet éclatant.", page: "nouvecento.html" },
+        { name: "ELDORADO", image: "img/eldora.jpg", description: "Peinture brillante pour un effet éclatant.", page: "eldorado.html" },
+        { name: "VELATURA", image: "img/ve.jpg", description: "Peinture brillante pour un effet éclatant.", page: "velatura.html" },
+        { name: "SPATOLATO", image: "img/q.png", description: "Peinture brillante pour un effet éclatant.", page: "spatolato.html" },
+        { name: "VESUVIO", image: "img/ves.jpg", description: "Peinture brillante pour un effet éclatant.", page: "vesuvio.html" },
+        { name: "PRESIOZA", image: "img/pre.jpg", description: "Peinture brillante pour un effet éclatant.", page: "presioza.html" },
+        { name: "POLAR", image: "img/pol.png", description: "Peinture brillante pour un effet éclatant.", page: "polar.html" },
+    ],
+    interior2: [
+        { name: "METEORE 10", image: "img/metio.jpg", description: "Peinture à effets spéciaux.", page: "Metiore10.html" },
+        { name: "ARTICO", image: "img/artc.jpg", description: "Peinture à effets spéciaux.", page: "artico.html" },
+        { name: "VALSATIN 2", image: "img/vl2.jpg", description: "Peinture à effets spéciaux.", page: "valsatin2.html" },
+        { name: "SABILADOR", image: "img/sabilador.jpg", description: "Peinture à effets spéciaux.", page: "sabilador.html" },
+        { name: "STUCCO 1000", image: "img/k1.jpg", description: "Peinture à effets spéciaux.", page: "st1.html" },
+        { name: "KLONDIKE", image: "img/klondike.jpg", description: "Peinture à effets spéciaux.", page: "klondike.html" },
+        { name: "POLISTOF", image: "img/polistof.jpg", description: "Peinture à effets spéciaux.", page: "polistof.html" },
+        { name: "VALRENNA", image: "img/valrenna.jpg", description: "Peinture à effets spéciaux.", page: "valrenna.html" },
+        { name: "ROCOCO TRAVERTINO", image: "img/rococo.jpg", description: "Peinture à effets spéciaux.", page: "rococo.html" },
+        { name: "MAVERICKS", image: "img/mav.jpg", description: "Peinture à effets spéciaux.", page: "mavericks.html" },
+    ],
+    exterior1: [
+        { name: "STUCCO ANTECO", image: "img/anteco.jpg", description: "Peinture anti-moisissure.", page: "stucco anteco.html" },     
+        { name: "ASTRAL METALLICO", image: "img/metalico.jpg", description: "Peinture anti-moisissure.", page: "metalico.html" },
+        { name: "ASTRAL STYLE", image: "img/style as.jpg", description: "Peinture anti-moisissure.", page: "astral style.html" },     
+        { name: "ASTRAL DESSERT", image: "img/dessert.jpg", description: "Peinture mate pour un look élégant.", page: "dessert.html" },
+        { name: "ASTRAL ELEGENCE", image: "img/elegence.jpg", description: "Peinture anti-moisissure.", page: "astral elegence.html" },
+        { name: "CHALIX MARMORINO", image: "img/chalix.jpg", description: "Peinture mate pour un look élégant.", page: "chalix.html" },
+        
+  
+    ],
+    exterior2: [
+        { name: "GRAFFIATO", image: "img/graffiti.jpg", description: "Peinture pour bois extérieur.", page: "graviti.html" },
+        { name: "MONOGRAIN", image: "img/monograin-img.png", description: "Peinture spéciale pour métal.", page: "monograin.html" },
+        { name: "SANTEX", image: "img/SANTEX.jpg", description: "Peinture pour bois extérieur.", page: "santex.html" },
+        { name: "MONOSTRATO", image: "img/MONO.jpg", description: "Peinture spéciale pour métal.", page: "monostrato.html" },
+
+    ],
+
+
+
+};
+// Track indices for each product category
+let currentIndices = {
+    interior1: 0,
+    interior2: 0,
+    exterior1: 0,
+    exterior2: 0,
+    exterior3: 0, // Added index for exterior3
+    exterior4: 0, // Added index for exterior4
+};
+
+// Keep track of search results and the current product count
+let displayedProducts = [];
+let searchResults = [];
+
+// Function to display products
+function displayProducts(containerId, productArray) {
+    const container = document.getElementById(containerId);
+    productArray.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product-item';
+        productElement.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <a href="${product.page}" class="info-button">Plus d'informations</a> <!-- Link to product page -->
+        `;
+        container.appendChild(productElement);
+    });
+}
+
+// Function to load initial products
+function loadInitialProducts(containerId) {
+    let category = containerId.startsWith('interior') ? (containerId === 'interiorProducts1' ? 'interior1' : 'interior2') : 
+                  (containerId === 'exteriorProducts1' ? 'exterior1' : 
+                  (containerId === 'exteriorProducts2' ? 'exterior2' : 
+                  (containerId === 'exteriorProducts3' ? 'exterior3' : 'exterior4'))); // Added checks for new exterior categories
+    const productArray = products[category];
+    const productsToLoad = productArray.slice(currentIndices[category], currentIndices[category] + 4); // Load 4 products at a time
+    displayProducts(containerId, productsToLoad);
+    currentIndices[category] += 4;
+
+    // Hide button if no more products
+    if (currentIndices[category] >= productArray.length) {
+        const loadMoreButton = document.getElementById(`loadMore${category}`);
+        loadMoreButton.style.display = 'none';
+    }
+}
+
+// Function to load more products when the "Afficher Plus" button is clicked
+function loadMoreProducts(containerId) {
+    let category = containerId.startsWith('interior') ? (containerId === 'interiorProducts1' ? 'interior1' : 'interior2') : (containerId === 'exteriorProducts1' ? 'exterior1' : 'exterior2');
+    const productArray = products[category];
+
+    // Load next 4 products
+    const productsToLoad = productArray.slice(currentIndices[category], currentIndices[category] + 4);
+    displayProducts(containerId, productsToLoad);
+    currentIndices[category] += 4;
+
+    // Hide button if no more products
+    if (currentIndices[category] >= productArray.length) {
+        document.getElementById('loadMore' + category.charAt(0).toUpperCase() + category.slice(1)).style.display = 'none';
+    }
+}
+
+// Function to filter products based on search input
+function filterProducts() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const productSections = document.querySelectorAll(".category");
+    let productsFound = false;
+
+    productSections.forEach(section => {
+        const productItems = section.querySelectorAll(".product-item");
+        let sectionHasResults = false;
+
+        productItems.forEach(item => {
+            const productName = item.querySelector("h3").innerText.toLowerCase();
+            if (productName.includes(searchInput)) {
+                item.style.display = "block";
+                sectionHasResults = true;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (sectionHasResults) {
+            section.style.display = "block";
+            productsFound = true;
+        } else {
+            section.style.display = "none";
+        }
+    });
+
+    // Show or hide the no-products message
+    document.getElementById("noProductsMessage").style.display = productsFound ? "none" : "block";
+}
+// Load initial products when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadInitialProducts('interiorProducts1');
+    loadInitialProducts('interiorProducts2');
+    loadInitialProducts('exteriorProducts1');
+    loadInitialProducts('exteriorProducts2');
+    loadInitialProducts('exteriorProducts3'); // Load initial products for new exterior3 category
+    loadInitialProducts('exteriorProducts4'); // Load initial products for new exterior4 category
+});
+
+    window.addEventListener('load', () => {
+        document.body.classList.add('fade-in'); // Add fade-in to the body
+
+        window.addEventListener("load", () => {
+    document.querySelector(".hero").classList.add("fade-in");
+    document.querySelectorAll(".category").forEach((element) => {
+        element.classList.add("fade-in");
+    });
+});
+    });
+
+
+
+
+</script>
+</body>
+</html>

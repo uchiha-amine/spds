@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>travertino</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style21.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <header>
+    <h1>travertino</h1>
+    <nav class="navbar">
+      <a href="acceuil.html" class="nav-link" >Accueil</a>
+  </nav>
+</header>
+    
+    <fieldset>
+        <legend><h3>Description :</h3></legend>
+        <p>
+            C’est un effet extraordinaire  décoratif obtenu grâce à la symbiose de deux produits phares de la marque qui sont le TRAVERTINO BASE et la CERA D’ARTE qui sont à la base de matières premières naturelles. C’est un revêtement mural parfaitement lavable, qui respire et résistant aux bactéries  et aux champignons. Le succès de TRAVERTINO s’illustre dans son apparence noble, sa polyvalence totale et l’universalité de son application.</p> <br><br>
+         <center><img  class="a" src="img/travertino.jpg" class="center" width="500px"> </center>
+         <main><p> <strong>Prix:</strong> <br>-TRAVERTINO BIANCO: 1 Kg/17,8dt <span>(remise 5%)</span> 
+         <p>La semaine prochaine, la remise augmentera de 15 %.<br>
+         (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+         <p><strong>Catalogue</strong> :
+         </p>
+     
+         <table class="catalog-table" style="display: block;">
+         <tr>
+           <td><img src="img/tr1.jpg"  class="catalog-img" data-index="0"></td>
+           <td><img src="img/tr2.jpg"  class="catalog-img" data-index="1"></td>
+           <td><img src="img/tr3.jpg"  class="catalog-img" data-index="2"></td>
+           <td><img src="img/tr4.jpg"  class="catalog-img" data-index="3"></td>
+          
+         <tr>
+           <td><img src="img/tr5.jpg"  class="catalog-img" data-index="4"></td>
+           <td><img src="img/tr6.jpg"  class="catalog-img" data-index="5"></td>
+           <td><img src="img/tr7.jpg"  class="catalog-img" data-index="6"></td>
+           <td><img src="img/tr8.jpg"  class="catalog-img" data-index="7"> </td>
+          
+         </tr>
+         <tr>
+           <td><img src="img/tr9.jpg"  class="catalog-img" data-index="8"></td>
+           <td><img src="img/tr10.jpg"  class="catalog-img" data-index="9"></td>
+           <td><img src="img/tr11.jpg"  class="catalog-img" data-index="10"></td>
+           <td><img src="img/tr12.jpg"  class="catalog-img" data-index="11"></td>
+           
+         </tr>
+         <td><img src="img/tr13.jpg"  class="catalog-img" data-index="12"></td>
+         <td><img src="img/tr14.jpg"  class="catalog-img" data-index="13"></td>
+         <td><img src="img/tr15.jpg"  class="catalog-img" data-index="14"></td>
+         <td><img src="img/tr16.jpg"  class="catalog-img" data-index="15"></td>
+     
+       </table><br>
+     </main>
+     
+     
+     </fieldset>
+     <br><footer><br><br><br>
+     <address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+     Email for booking :stepeinturesridi@gmail.com <br>
+     Tel: 52 282 624</address>
+     </footer>
+     <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+  </div>
+<script>
+// JavaScript code
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".catalog-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentIndex;
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      currentIndex = index;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+      lightbox.style.display = "none";
+  }
+});
+
+</script>
+</body>
+</html>   
